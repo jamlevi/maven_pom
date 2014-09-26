@@ -23,7 +23,7 @@ module MavenPom
       @map = {}
 
       @poms.each do |pom|
-        @map[pom.key] = pom
+        @map[pom.gav] = pom
         @dag.add_vertex(pom.key)
       end
 

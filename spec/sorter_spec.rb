@@ -5,22 +5,22 @@ module MavenPom
     let(:poms) {
       [
         mock(Pom,
-          :key => "no.finntech:control",
+          :gav => "no.finntech:control",
           :dependencies => ["no.finntech:kernel", "no.finntech:base"],
           :parent => nil
         ),
         mock(Pom,
-          :key => "no.finntech:kernel",
+          :gav => "no.finntech:kernel",
           :dependencies => [],
           :parent => "no.finntech:iad"
         ),
         mock(Pom,
-          :key => "no.finntech:base",
+          :gav => "no.finntech:base",
           :dependencies => ["no.finntech:kernel"],
           :parent => "no.finntech:iad"
         ),
         mock(Pom,
-          :key => "no.finntech:iad",
+          :gav => "no.finntech:iad",
           :dependencies => [],
           :parent => nil
         )
@@ -28,7 +28,7 @@ module MavenPom
     }
 
     it "does a topological sort of the given maven modules" do
-      sorted = Sorter.new(poms).sort.map { |e| e.key }
+      sorted = Sorter.new(poms).sort.map { |e| e.gav }
 
       sorted.should == [
         "no.finntech:iad",

@@ -14,6 +14,14 @@ module MavenPom
     Pom.new File.read(path), path
   end
 
+  def self.from_url(url)
+    Pom.new open(url), url
+  end
+
+  def self.from_string(str)
+    Pom.new str, str
+  end
+
   def self.sort(poms)
     Sorter.new(poms).sort
   end

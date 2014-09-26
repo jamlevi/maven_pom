@@ -13,6 +13,10 @@
     <version.jdk>1.7</version.jdk>
   </properties>
 
+  <scm>
+    <developerConnection>scm:svn:svn+ssh://svn.clownfart.com/opt/svnroot/main/core/trunk</developerConnection>
+  </scm>
+
   <dependencies>
 
     <dependency>
