@@ -38,6 +38,12 @@ module MavenPom
       @pom.css("project > version").text.strip
     end
 
+    def developers
+      @pom.css("developers > developer").map do |node|
+        node.css("email").text
+      end
+    end
+
     def build_plugins
       @pom.css("plugins > plugin").map do |node|
         dependency_name_from(node)
