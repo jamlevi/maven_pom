@@ -1,3 +1,3 @@
 module MavenPom
-  VERSION = "0.0.4.opower"
+  VERSION = "0.0.5.opower"
 end
