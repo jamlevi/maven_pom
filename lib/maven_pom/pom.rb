@@ -111,16 +111,16 @@ module MavenPom
       props
     end
 
-    #def dependency_name_from(node)
-    #  gid = node.css("groupId").text
-    #  aid = node.css("artifactId").text
-    #  v   = node.css("version").text
-    #
-    #  gid = group_id if gid == "${project.groupId}" # ugh
-    #
-    #  "#{gid}:#{aid}:#{v}"
-    #
-    #end
+    def dependency_name_from(node)
+    gid = node.css("groupId").text
+    aid = node.css("artifactId").text
+    v   = node.css("version").text
+
+    gid = group_id if gid == "${project.groupId}" # ugh
+
+    "#{gid}:#{aid}:#{v}"
+
+    end
 
     def modules
       @pom.css("modules > module").map do |node|

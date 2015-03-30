@@ -5,6 +5,7 @@ module MavenPom
     let(:pom_module) { Pom.new fixture("pom.xml"), "some/pom/path/pom.xml" }
     let(:war_module) { Pom.new fixture("war.xml"), "some/war/path/pom.xml" }
     let(:child_module) { Pom.new fixture("child.xml"), "some/child/path/pom.xml" }
+    let(:parent_module) { Pom.new fixture("artifact.xml"), "some/child/path/pom.xml" }
 
     it "knows the module's packaging" do
       pom_module.packaging.should == 'pom'
@@ -16,11 +17,7 @@ module MavenPom
     end
 
     it "knows the module's dependencies" do
-      pom_module.dependencies.each do |d|
-         puts d.class
-      end
-      pom_module.dependencies.should include 'com.example:example-dep-1:4.0'
-                                      #   '${project.groupId}:example-dep-2:4.0']
+      pom_module.dependencies.to_s.include?('com.example:example-dep-1:4.0').should be true
     end
 
     it "knows the module's parent" do
@@ -33,10 +30,7 @@ module MavenPom
     end
 
     it "knows the module's build plugins" do
-      child_module.build_plugins.should == %w(
-        org.apache.maven.plugins:maven-source-plugin
-        org.apache.maven.plugins:maven-javadoc-plugin
-        org.apache.maven.plugins:maven-deploy-plugin)
+      expect(child_module.build_plugins).to eq %w(org.apache.maven.plugins:maven-source-plugin: org.apache.maven.plugins:maven-javadoc-plugin: org.apache.maven.plugins:maven-deploy-plugin:)
     end
 
     it "knows the group_id and artifact_id" do
@@ -50,11 +44,15 @@ module MavenPom
     end
 
     it "has a gav" do
-      war_module.gav.should == "com.example:example-war"
+      expect(war_module.gav).to eq "com.example:example-war:1.0.0"
     end
 
     it "can get the pom's properties" do
       pom_module.properties.should == {'version.jdk' => '1.7'}
+    end
+
+    it "extracts all developer emails from a pom" do
+      expect(parent_module.developers) .to eq %w(schwartz-infrastructure@spaceballs.com mel-brooks@spaceballs.com rick-moranis@spaceballs.com)
     end
   end
 end

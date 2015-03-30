@@ -24,7 +24,7 @@ module MavenPom
 
       @poms.each do |pom|
         @map[pom.gav] = pom
-        @dag.add_vertex(pom.key)
+        @dag.add_vertex(pom.gav)
       end
 
       @dag.vertices.each do |key|

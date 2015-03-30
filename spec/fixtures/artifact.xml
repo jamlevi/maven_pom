@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>com.spaceballs</groupId>
+    <artifactId>space-parent</artifactId>
+    <version>4.4.0</version>
+  </parent>
+
+  <groupId>com.spaceballs</groupId>
+  <artifactId>schwartz</artifactId>
+  <version>11.3.0-SNAPSHOT</version>
+
+  <name>Bertha The Batch System</name>
+  <description>In a distant galaxy, planet Spaceball has depleted its air supply, leaving its citizens reliant on a product called "Perri-Air."</description>
+  <url>http://spaceballs.com/</url>
+  <packaging>pom</packaging>
+
+  <modules>
+    <module>artifacts-sub1</module>
+    <module>artifact-sub2</module>
+  </modules>
+
+  <scm>
+    <developerConnection>scm:git:git@github.spaceballs.com:main/schwartz.git</developerConnection>
+    <tag>311.1.x</tag>
+  </scm>
+
+  <developers>
+    <developer>
+      <name>Schwartz Infrastructure</name>
+      <email>schwartz-infrastructure@spaceballs.com</email>
+    </developer>
+    <developer>
+      <name>Mel Brooks</name>
+      <email>mel-brooks@spaceballs.com</email>
+    </developer>
+    <developer>
+      <name>Rick Moranis</name>
+      <email>rick-moranis@spaceballs.com</email>
+    </developer>
+  </developers>
+
+</project>

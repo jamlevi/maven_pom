@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>com.spaceballs</groupId>
+    <artifactId>space-parent</artifactId>
+    <version>11.3.0-SNAPSHOT</version>
+    <relativePath>../space-parent</relativePath>
+  </parent>
+
+  <artifactId>druidia-api</artifactId>
+
+  <name>Druidia API Specification</name>
+  <description>Spaceball's leader President Skroob (Mel Brooks) orders the evil Dark Helmet (Rick Moranis) to kidnap Princess Vespa (Daphne Zuniga) of oxygen-rich Druidia</description>
+  <url>http://spaceballs.com/</url>
+  <packaging>jar</packaging>
+
+  <dependencies>
+    <dependency>
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons-lang3</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.jboss.resteasy</groupId>
+      <artifactId>resteasy-jaxrs</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.jboss.resteasy</groupId>
+      <artifactId>resteasy-spring</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.codehaus.jackson</groupId>
+      <artifactId>jackson-jaxrs</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.google.guava</groupId>
+      <artifactId>guava-testlib</artifactId>
+      <version>14.0.1</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+
+  <developers>
+    <developer>
+      <name>Druidia Api</name>
+      <email>druidia-api@spaceballs.com</email>
+    </developer>
+    <developer>
+      <name>Druidia Core</name>
+      <email>druidia-core@spaceballs.com</email>
+    </developer>
+    <developer>
+      <name>Druidia Runner</name>
+      <email>druidia-runner@spaceballs.com</email>
+    </developer>
+    <developer>
+      <name>Druidia Test</name>
+      <email>druidia-test@spaceballs.com</email>
+    </developer>
+  </developers>
+</project>
